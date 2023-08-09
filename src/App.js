@@ -1,9 +1,22 @@
-// src/components/PostList.js
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  BrowserRouter,
+} from "react-router-dom";
+import AllTrainsPage from "./pages/AllTrainsPage";
+import SingleTrainPage from "./pages/SingleTrainPage";
 
 function App() {
-  return <div></div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={AllTrainsPage} />
+        <Route path="/train/:trainId" element={SingleTrainPage} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
